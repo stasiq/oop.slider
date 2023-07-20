@@ -19,6 +19,8 @@
 </ul>
 
 <button class="controls" id="pause">Pause</button>
+<button class="controls" id="prev"><<</button>
+<button class="controls" id="next">>></button>
 <script src="oop.js"></script>
 </body>
 </html>

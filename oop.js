@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         constructor() {
             this.slideInterval = setInterval(this.nextSlide.bind(this), 2000);
-            this.pauseButton.onclick = this.start
+            // this.pauseButton.onclick = this.start
         }
 
         playSlideshow() {
@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         pauseSlideshow() {
+            this.pauseButton.innerHTML = 'Play';
+            this.playing = false;
+            clearInterval(this.slideInterval);
+        }
+
+        nextSlideButton() {
             this.pauseButton.innerHTML = 'Play';
             this.playing = false;
             clearInterval(this.slideInterval);
@@ -40,6 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const slider = new Slider();
+    slider.pauseButton.addEventListener("click", function () {
+        if (slider.playing) {
+            slider.pauseSlideshow();
+        } else {
+            slider.playSlideshow();
+
+        }
+    });
+    // Тут slider.playing undefined
+    // slider.pauseButton.addEventListener("click", slider.start);
 
 });
 
