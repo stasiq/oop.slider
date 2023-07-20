@@ -58,3 +58,15 @@
 .slide:nth-of-type(5) {
     background: purple;
 }
+
+.slide:nth-of-type(6) {
+    background: aquamarine;
+}
+
+.slide:nth-of-type(7) {
+    background: aqua;
+}
+
+.slide:nth-of-type(8) {
+    background: pink;
+}

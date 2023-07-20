@@ -16,6 +16,10 @@
     <li class="slide">Slide 3</li>
     <li class="slide">Slide 4</li>
     <li class="slide">Slide 5</li>
+    <li class="slide">Slide 6</li>
+    <li class="slide">Slide 7</li>
+    <li class="slide">Slide 8</li>
+    <li class="slide">Slide 9</li>
 </ul>
 
 <button class="controls" id="pause">Pause</button>

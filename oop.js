@@ -17,15 +17,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         prevSlide() {
-            console.log(this.currentSlide);
-            if (this.currentSlide < 2) {
-
-                this.currentSlide = 4;
-                console.log('меньше' + this.currentSlide);
-            }
+            console.log('Текущ' + this.currentSlide);
             this.slides[this.currentSlide].className = 'slide';
-            this.currentSlide = (this.currentSlide + 1) % this.slides.length - 2;
+
+            if (this.currentSlide < 1) {
+                console.log(this.currentSlide + '<1');
+                this.currentSlide = this.slides.length - 1;
+            } else {
+                this.currentSlide = (this.currentSlide ) % this.slides.length - 1;
+                console.log(this.currentSlide + '>>>2');
+            }
             this.slides[this.currentSlide].className = 'slide showing';
+
         }
 
         start() {
@@ -90,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
     slider.prevButton.addEventListener("click", function () {
         slider.prevSlideButton()
     });
+
     // Тут slider.playing undefined
     // slider.pauseButton.addEventListener("click", slider.start);
 
