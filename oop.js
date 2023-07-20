@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     class Slider {
-        constructor() {
-            this.slides = document.querySelectorAll('#slides .slide');;
-            this.currentSlide = 0
-            this.playing = true;
-            this.pauseButton = document.getElementById('pause');
-            this.slideInterval = setInterval(this.nextSlide.bind(this), 2000);
+        slides = document.querySelectorAll('#slides .slide');
+        currentSlide = 0
+        playing = true;
+        pauseButton = document.getElementById('pause');
 
+        constructor() {
+            this.slideInterval = setInterval(this.nextSlide.bind(this), 2000);
+            this.pauseButton.onclick = this.start
         }
 
         playSlideshow() {
@@ -28,18 +29,17 @@ document.addEventListener('DOMContentLoaded', function () {
             this.slides[this.currentSlide].className = 'slide showing';
         }
 
+        start() {
+            if (this.playing) {
+                this.pauseSlideshow();
+            } else {
+                this.playSlideshow();
+            }
+        }
+
     }
 
     const slider = new Slider();
-    slider.nextSlide.bind(slider)
-
-    slider.pauseButton.onclick = function () {
-        if (slider.playing) {
-            slider.pauseSlideshow();
-        } else {
-            slider.playSlideshow();
-        }
-    };
 
 });
 
